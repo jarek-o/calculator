@@ -14,7 +14,7 @@ pipeline{
 		stage("Code Coverage"){
 			steps{
 				sh "./mvnw -X test"
-				publishHTML (target[
+				publishHTML (target: [
 					reportDir: 'target/site/jacoco/com.jarek.calculator',
 					reportFiles: 'index.html',
 					reportName: "jacoco Report"
