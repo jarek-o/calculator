@@ -15,7 +15,7 @@ pipeline{
 			steps{
 				sh "./mvnw -X test"
 				publishHTML (target: [
-					reportDir: 'target/site/jacoco/com.jarek.calculator',
+					reportDir: 'target/site/jacoco/',
 					reportFiles: 'index.html',
 					reportName: "jacoco Report"
 				])			
