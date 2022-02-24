@@ -31,7 +31,7 @@ pipeline{
                                 publishHTML (target: [
                                		reportDir: 'target/',
                                 	reportFiles: 'checkstyle-result.xml',
-                                	reportName: "Checkstyle Report"]
+                                	reportName: "Checkstyle Report"])
 			}
 		}
 	}
