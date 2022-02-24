@@ -1,1 +1,2 @@
-# calculator dla mass
+# calculator
+to jest dla nas mass 
