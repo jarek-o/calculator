@@ -1,9 +1,7 @@
 pipeline{
 	agent any
 
-	triggers {
-		pollSCM('* * * * *')
-	}
+	triggers { pollSCM('* * * * *') }
 
 	stages{
 		stage("Compile"){
@@ -33,7 +31,7 @@ pipeline{
                                 publishHTML (target: [
                                		reportDir: 'target/',
                                 	reportFiles: 'checkstyle-result.xml',
-                                	reportName: "Checkstyle Report"
+                                	reportName: "Checkstyle Report"]
 			}
 		}
 	}
