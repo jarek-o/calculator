@@ -1,1 +1,1 @@
-# calculator
+# calculator dla mass
