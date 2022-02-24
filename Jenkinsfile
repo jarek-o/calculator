@@ -1,5 +1,10 @@
 pipeline{
 	agent any
+
+	triggers {
+		pollSCM('* * * * *')
+	}
+
 	stages{
 		stage("Compile"){
 			steps{
@@ -20,6 +25,15 @@ pipeline{
 					reportName: "jacoco Report"
 				])			
 
+			}
+		}
+		stage("Static code analysis"){
+			steps{
+				sh "./mvnw site"
+                                publishHTML (target: [
+                               		reportDir: 'target/',
+                                	reportFiles: 'checkstyle-result.xml',
+                                	reportName: "Checkstyle Report"
 			}
 		}
 	}

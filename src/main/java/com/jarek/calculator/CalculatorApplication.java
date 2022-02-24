@@ -1,3 +1,7 @@
+/**
+ *  Main Spring
+ */
+
 package com.jarek.calculator;
 
 import org.springframework.boot.SpringApplication;

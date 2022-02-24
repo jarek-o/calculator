@@ -1,3 +1,6 @@
+/*
+ * this is the class
+ */
 package com.jarek.calculator;
 import org.springframework.stereotype.Service;
 @Service

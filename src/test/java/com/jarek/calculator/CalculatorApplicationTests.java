@@ -1,3 +1,6 @@
+/*
+ * junit application test
+ */
 package com.jarek.calculator;
 
 import org.junit.jupiter.api.Test;
