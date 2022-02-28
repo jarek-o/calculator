@@ -12,6 +12,7 @@
 	<artifactId>calculator</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>calculator</name>
+	<packaging>jar</packaging>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<jacoco.version>0.8.3</jacoco.version>
@@ -57,10 +58,6 @@
               </execution>
       	    </executions>
     	   </plugin>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
 <plugin>
   <groupId>org.apache.maven.plugins</groupId>
   <artifactId>maven-site-plugin</artifactId>
@@ -71,8 +68,43 @@
   <artifactId>maven-project-info-reports-plugin</artifactId>
   <version>3.0.0</version>
 </plugin>
+<plugin>
+      <!-- Build an executable JAR -->
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-jar-plugin</artifactId>
+      <version>3.1.0</version>
+      <configuration>
+        <archive>
+          <manifest>
+            <addClasspath>true</addClasspath>
+            <classpathPrefix>lib/</classpathPrefix>
+	    <mainClass>com.jarek.calculator.CalculatorApplication</mainClass>
+          </manifest>
+        </archive>
+      </configuration>
+    </plugin>
+                        <plugin>
+                                <groupId>org.springframework.boot</groupId>
+                                <artifactId>spring-boot-maven-plugin</artifactId>
+                                    <executions>
+                                        <execution>
+                                        <goals>
+                                        <goal>repackage</goal>
+                                        </goals>
+                                        <configuration>
+                                        <classifier>spring-boot</classifier>
+                                        <mainClass>
+                                        com.jarek.calculator.CalculatorApplication
+                                        </mainClass>
+                                         </configuration>
+                                        </execution>
+                                   </executions>
+                        </plugin>
 
-		</plugins>
+
+
+
+	             </plugins>
 	</build>
 
    <reporting>

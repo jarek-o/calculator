@@ -34,5 +34,15 @@ pipeline{
                                 	reportName: "Checkstyle Report"])
 			}
 		}
+		stage("Package"){
+			steps{
+				sh "./mvnw package"
+			}
+		}
+                stage("Docker Build"){
+                        steps{
+                                sh "docker build -t localhost:5000/calculator ."
+                        }
+                }
 	}
 }
