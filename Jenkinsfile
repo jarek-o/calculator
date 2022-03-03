@@ -41,7 +41,7 @@ pipeline{
 		}
                 stage("Docker Build"){
                         steps{
-                                sh "docker build -t localhost:5000/calculator ."
+                                sh "sudo docker build -t localhost:5000/calculator ."
                         }
                 }
 	}
