@@ -46,7 +46,7 @@ pipeline{
                 }
                 stage("Docker push"){
                         steps{
-                                sh "docker push localhost:5000/calculator:latest"
+                                sh "sudo docker push localhost:5000/calculator:latest"
                         }
                 }
 
