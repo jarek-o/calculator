@@ -44,5 +44,11 @@ pipeline{
                                 sh "sudo docker build -t localhost:5000/calculator ."
                         }
                 }
+                stage("Docker push"){
+                        steps{
+                                sh "docker push localhost:5000/calculator ."
+                        }
+                }
+
 	}
 }
